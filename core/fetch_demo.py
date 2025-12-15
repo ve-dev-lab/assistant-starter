@@ -50,7 +50,7 @@ async def fetch_services():
     responses = await asyncio.gather(*tasks)
     end_time = asyncio.get_event_loop().time()
     total_time = end_time - start
-    print(f'\n===== Все запросы выполнились за  {total_time:.2f}')
+    print(f'\n===== Все запросы выполнились за  {total_time:.2f} сек. =====')
     result = {}
     for service_name, response_body in zip(services.keys(), responses):
         result[service_name] = response_body
